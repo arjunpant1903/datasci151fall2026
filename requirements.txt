@@ -11,3 +11,8 @@ jupyterlab>=4.2
 notebook>=7.2
 ipykernel>=6.29
 nbconvert>=7.16
+
+# Pin Tornado below 6.5: JupyterLab 4.6.x's static FileFindHandler is
+# incompatible with Tornado 6.5+ and returns HTTP 500 for lab assets
+# (AttributeError: 'FileFindHandler' object has no attribute 'allowed_symlink_directory').
+tornado>=6.4,<6.5
